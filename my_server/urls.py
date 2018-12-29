@@ -15,7 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url, include
+from rest_framework import routers
+from restApi.views import UserViewSet, PostViewSet, CommentViewSet
+from rest_framework_swagger.views import get_swagger_view
+
+router = routers.DefaultRouter()
+router.register('user', UserViewSet)
+router.register('post', PostViewSet)
+router.register('comment', CommentViewSet)
+
+schema_view = get_swagger_view(title="게시판 API")
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include(router.urls)),
+    url('swagger/', schema_view)
 ]
