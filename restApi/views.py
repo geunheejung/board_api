@@ -10,12 +10,14 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
+
 class PostViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
+    queryset = Post.objects.all()
     serializer_class = PostSerializer
 
+
 class CommentViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
+    queryset = Comment.objects.all()
     serializer_class = CommentSerializer
 
 
