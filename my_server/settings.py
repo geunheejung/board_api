@@ -25,7 +25,9 @@ SECRET_KEY = 'dwcxzo-)swn4#^&vsu$x7-k0o7k7d*#@#zeh5csm#7e)s99!l4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '13.209.7.195'
+]
 
 
 # Application definition
@@ -121,4 +123,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
+# STATIC_ROOT = '/home/ubuntu/board_api/static'
